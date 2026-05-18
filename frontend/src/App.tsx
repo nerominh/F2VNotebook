@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import Sidebar from './components/layout/Sidebar';
 import TopBar from './components/layout/TopBar';
 import Dashboard from './pages/Dashboard';
+import LandingPage from './pages/LandingPage';
 import LivestockPage from './pages/LivestocksPage';
 import PublicDashboard from './pages/PublicDashboard';
 import QuizPage from './pages/QuizPage';
@@ -12,9 +13,10 @@ import ChatPage from './pages/ChatPage';
 
 function App() {
   const { t } = useTranslation();
-  const [activePage, setActivePage] = useState('dashboard');
+  const [activePage, setActivePage] = useState('landing');
 
   const PAGE_TITLES: Record<string, string> = {
+    landing: 'Home',
     dashboard: t('app.dashboard'),
     notebook: t('app.notebook'),
     livestock: t('app.livestock'),
@@ -30,6 +32,8 @@ function App() {
 
   const renderPage = () => {
     switch (activePage) {
+      case 'landing':
+        return <LandingPage onNavigate={setActivePage} />;
       case 'dashboard':
         return <Dashboard />;
       case 'notebook':
@@ -56,6 +60,10 @@ function App() {
         );
     }
   };
+
+  if (activePage === 'landing') {
+    return <LandingPage onNavigate={setActivePage} />;
+  }
 
   return (
     <div className="flex h-screen overflow-hidden bg-farm-bg">

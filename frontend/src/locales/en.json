@@ -125,5 +125,65 @@
     "edit": "Edit",
     "view": "View",
     "close": "Close"
+  },
+  "landing": {
+    "heroTagline": "AI notebook for healthier herds",
+    "heroTitle": "Your herd intelligence hub for proactive animal health.",
+    "heroDescription": "Farm2Vets blends AI-powered notebook workflows, live sensor analytics, and seamless vet collaboration into a premium interface built for trusted decisions.",
+    "launchNotebook": "Launch Notebook",
+    "explorePlatform": "Explore the platform",
+    "alertAccuracy": "Alert accuracy",
+    "animalsMonitored": "Animals monitored",
+    "operationalCoverage": "Operational coverage",
+    "fasterDecisions": "Faster decisions",
+    "walkthroughLabel": "Notebook walkthrough",
+    "walkthroughTitle": "Onboarding video",
+    "walkthroughSubtitle": "A polished guide to start using the AI Herd Notebook instantly.",
+    "previewTag": "Preview",
+    "smartSummaries": "Smart summaries",
+    "smartSummariesDescription": "Instantly surface the top health signals and animal alerts.",
+    "actionReadyAlerts": "Action-ready alerts",
+    "actionReadyAlertsDescription": "See risk, treatment advice, and consultation triggers in one view.",
+    "faqTitle": "Frequently Asked Questions",
+    "faqSubtitle": "Everything you need to know about the AI Herd Notebook and how it helps your farm.",
+    "whySectionLabel": "Why Farm2Vets",
+    "decisionTitle": "Designed for modern farms, built to inspire confidence.",
+    "decisionDescription": "From real-time environmental intelligence to expert consultations, Farm2Vets brings the full livestock health workflow into one premium experience.",
+    "aiSummary": "Intelligent notebook summarization and alert prioritization.",
+    "opsSummary": "Live sensor telemetry and actionable barn insights.",
+    "feature1": {
+      "title": "AI-powered Herd Notebook",
+      "description": "Capture every animal insight with smart notes, automated health flags, and action-ready recommendations."
+    },
+    "feature2": {
+      "title": "Live Sensor Intelligence",
+      "description": "Monitor barn conditions and disease risk in real time with sensor-driven alerts and precision analytics."
+    },
+    "feature3": {
+      "title": "Veterinary Collaboration",
+      "description": "Connect quickly with vets, schedule consults, and share actionable reports straight from the dashboard."
+    },
+    "feature4": {
+      "title": "Risk Map & Forecasts",
+      "description": "Visualize disease risk trends, heatmaps, and regional alerts to stay ahead of outbreaks."
+    },
+    "faqs": [
+      {
+        "question": "How do I start using the AI Herd Notebook?",
+        "answer": "Click Launch Notebook to open the notebook interface. Then add your herd details to begin tracking health events and alerts."
+      },
+      {
+        "question": "Can I switch between English and Vietnamese?",
+        "answer": "Yes. Use the language switcher at the top of the page to toggle between EN and VI instantly."
+      },
+      {
+        "question": "What insights does the platform provide?",
+        "answer": "Farm2Vets delivers automated health alerts, sensor analytics, risk heatmaps, and consult-ready reports for your livestock."
+      },
+      {
+        "question": "Is the walkthrough video available?",
+        "answer": "Yes. The video placeholder shows the onboarding experience location, and it will be connected as a guided tutorial soon."
+      }
+    ]
   }
 }

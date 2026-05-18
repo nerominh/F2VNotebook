@@ -125,5 +125,65 @@
     "edit": "Chỉnh sửa",
     "view": "Xem",
     "close": "Đóng"
+  },
+  "landing": {
+    "heroTagline": "Sổ tay AI cho đàn khỏe mạnh hơn",
+    "heroTitle": "Trung tâm thông minh cho sức khỏe đàn gia súc chủ động.",
+    "heroDescription": "Farm2Vets kết hợp quy trình sổ tay AI, phân tích cảm biến trực tiếp và kết nối thú y liền mạch trong một giao diện cao cấp cho quyết định đáng tin cậy.",
+    "launchNotebook": "Mở Sổ tay",
+    "explorePlatform": "Khám phá nền tảng",
+    "alertAccuracy": "Độ chính xác cảnh báo",
+    "animalsMonitored": "Số gia súc giám sát",
+    "operationalCoverage": "Hoạt động 24/7",
+    "fasterDecisions": "Quyết định nhanh hơn",
+    "walkthroughLabel": "Hướng dẫn sổ tay",
+    "walkthroughTitle": "Video khởi động",
+    "walkthroughSubtitle": "Hướng dẫn nâng cao để bắt đầu sử dụng Sổ tay đàn gia súc AI ngay lập tức.",
+    "previewTag": "Xem trước",
+    "smartSummaries": "Tóm tắt thông minh",
+    "smartSummariesDescription": "Nổi bật ngay các tín hiệu sức khỏe và cảnh báo quan trọng.",
+    "actionReadyAlerts": "Cảnh báo sẵn sàng hành động",
+    "actionReadyAlertsDescription": "Xem rủi ro, tư vấn điều trị và hành động đề xuất trong cùng một view.",
+    "faqTitle": "Câu hỏi thường gặp",
+    "faqSubtitle": "Mọi điều bạn cần biết về Sổ tay đàn gia súc AI và cách nó giúp trang trại của bạn.",
+    "whySectionLabel": "Tại sao chọn Farm2Vets",
+    "decisionTitle": "Thiết kế cho trang trại hiện đại, tạo niềm tin cho mọi quyết định.",
+    "decisionDescription": "Từ trí tuệ cảm biến đến tư vấn chuyên gia, Farm2Vets đưa quy trình sức khỏe gia súc vào một trải nghiệm cao cấp.",
+    "aiSummary": "Tóm tắt sổ tay thông minh và ưu tiên cảnh báo.",
+    "opsSummary": "Dữ liệu cảm biến trực tiếp và thông tin trang trại dễ hành động.",
+    "feature1": {
+      "title": "Sổ tay Đàn gia súc AI",
+      "description": "Ghi lại mọi thông tin gia súc với ghi chú thông minh, cảnh báo sức khỏe tự động và đề xuất hành động."
+    },
+    "feature2": {
+      "title": "Phân tích Cảm biến Trực tiếp",
+      "description": "Giám sát điều kiện chuồng và rủi ro dịch bệnh theo thời gian thực với cảnh báo cảm biến và phân tích chính xác."
+    },
+    "feature3": {
+      "title": "Kết nối Thú y",
+      "description": "Kết nối nhanh với bác sĩ thú y, lên lịch tư vấn và chia sẻ báo cáo trực tiếp từ dashboard."
+    },
+    "feature4": {
+      "title": "Bản đồ Rủi ro & Dự báo",
+      "description": "Hình dung xu hướng rủi ro dịch bệnh, bản đồ nhiệt và cảnh báo khu vực để đi trước một bước."
+    },
+    "faqs": [
+      {
+        "question": "Làm sao để bắt đầu sử dụng Sổ tay đàn gia súc AI?",
+        "answer": "Nhấn Mở Sổ tay để vào giao diện sổ tay. Sau đó thêm thông tin đàn của bạn để bắt đầu theo dõi sự kiện sức khỏe và cảnh báo."
+      },
+      {
+        "question": "Tôi có thể chuyển đổi giữa tiếng Anh và tiếng Việt không?",
+        "answer": "Có. Sử dụng bộ chuyển ngôn ngữ ở góc trên trang để bật/tắt giữa EN và VI ngay lập tức."
+      },
+      {
+        "question": "Nền tảng cung cấp những thông tin gì?",
+        "answer": "Farm2Vets cung cấp cảnh báo sức khỏe tự động, phân tích cảm biến, bản đồ rủi ro và báo cáo sẵn sàng tư vấn cho đàn gia súc của bạn."
+      },
+      {
+        "question": "Video hướng dẫn có sẵn không?",
+        "answer": "Có. Không gian hiển thị video này dành cho trải nghiệm hướng dẫn, và sẽ được kết nối như một bài học hướng dẫn sớm."
+      }
+    ]
   }
 }
