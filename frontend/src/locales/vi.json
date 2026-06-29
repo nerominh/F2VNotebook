@@ -92,7 +92,7 @@
     "normal25to50": "Bình thường (25-50)",
     "elevated50to75": "Nâng cao (50-75)",
     "critical75to100": "Nguy hiểm (75-100)",
-    "loadingData": "Đang tải dữ liệu...",
+    "loadingData": "Đang tải dữ liệu từ hệ thống...",
     "backendEmpty": "Backend trống. Hiển thị dữ liệu giả lập.",
     "loadedDataPoints": "Đã tải thành công {count} điểm dữ liệu.",
     "generatingDemoData": "Đang tạo dữ liệu demo trên backend...",
@@ -227,6 +227,22 @@
         "reportsRecommendations": {
           "title": "Thẻ khuyến nghị",
           "description": "Chuyển sang Khuyến nghị khi bạn muốn xem hướng dẫn do AI tạo dựa trên báo cáo tài chính hiện tại."
+        },
+        "vetConnectNavigation": {
+          "title": "M? K?t n?i Th? y",
+          "description": "D?ng K?t n?i Th? y khi b?o c?o, c?nh b?o ho?c ghi ch? c?n b?c s? th? y xem x?t."
+        },
+        "vetConnectRequest": {
+          "title": "T?o y?u c?u t? v?n",
+          "description": "Ch?n lo?i v?t nu?i, m?c ?? kh?n c?p v? tri?u ch?ng ?? y?u c?u c? ?? th?ng tin cho b??c ph?n lo?i nhanh."
+        },
+        "vetConnectAvailability": {
+          "title": "Xem tr?ng th?i b?c s?",
+          "description": "Ki?m tra b?c s? n?o ?ang kh? d?ng, tr?ng th?i, khu v?c v? th?i gian ph?n h?i d? ki?n tr??c khi ti?p t?c."
+        },
+        "vetConnectQueue": {
+          "title": "Theo d?i t? v?n g?n ??y",
+          "description": "Khu v?c n?y minh h?a c?ch theo d?i c?u h?i t? trang tr?i, t? l?c g?i y?u c?u ??n khi nh?n ph?n h?i th? y."
         }
       }
     },
@@ -238,14 +254,13 @@
     "status": "Trạng thái",
     "normal": "Bình thường",
     "warning": "Cảnh báo",
-    "critical": "Nguy hiểm",
+    "critical": "NGUY HIỂM",
     "avg": "trung bình",
     "noData": "Không có dữ liệu",
     "regionalDiseaseAlert": "Cảnh báo Bệnh Khu vực",
     "low": "THẤP",
     "medium": "TRUNG BÌNH",
     "high": "CAO",
-    "critical": "NGUY HIỂM",
     "lowDescription": "Không có hoạt động bệnh đáng kể trong khu vực của bạn.",
     "mediumDescription": "Bệnh tay chân miệng và nhiễm trùng đường hô hấp được báo cáo ở các quận lân cận.",
     "highDescription": "Nhiều ổ dịch bệnh được xác nhận. Hạn chế di chuyển gia súc.",
@@ -287,7 +302,6 @@
     "daNang": "Đà Nẵng",
     "myLocation": "Vị trí của tôi",
     "loading": "Đang tải...",
-    "loadingData": "Đang tải dữ liệu từ hệ thống...",
     "loadingMapData": "Đang tải dữ liệu bản đồ...",
     "geolocationUnsupported": "Trình duyệt của bạn không hỗ trợ định vị.",
     "geolocationFailed": "Không thể lấy vị trí của bạn.",
@@ -335,13 +349,87 @@
   },
   "vetConnect": {
     "title": "Kết nối Thú y",
-    "subtitle": "Danh sách bác sĩ thú y hiện có và yêu cầu tư vấn.",
+    "eyebrow": "Hỗ trợ chuyên gia",
+    "subtitle": "Gửi yêu cầu hỗ trợ, xem trạng thái bác sĩ thú y và xử lý câu hỏi khẩn cấp về đàn vật nuôi.",
     "panelTitle": "Kết nối Thú y",
     "loadError": "Hiện không thể tải danh sách bác sĩ thú y.",
     "noVets": "Chưa có bác sĩ thú y khả dụng.",
     "sending": "Đang gửi...",
     "requestConsult": "Yêu cầu Tư vấn",
     "consultRequested": "Đã yêu cầu Tư vấn",
+    "responseTimeValue": "Dưới 2 giờ",
+    "responseTimeLabel": "phản hồi trung bình",
+    "requestSubject": "Yêu cầu tư vấn cho {{animal}}",
+    "defaultRequestDescription": "Yêu cầu tư vấn thú y từ Kết nối Thú y.",
+    "metrics": {
+      "available": "Đang khả dụng",
+      "today": "Phản hồi hôm nay",
+      "urgent": "Hàng chờ khẩn cấp",
+      "region": "Khu vực gần nhất",
+      "regionValue": "Hưng Yên"
+    },
+    "requestComposer": {
+      "eyebrow": "Tư vấn mới",
+      "title": "Hỏi bác sĩ thú y",
+      "subtitle": "Chia sẻ loại vật nuôi, mức độ khẩn cấp và quan sát thực địa để bác sĩ phân loại nhanh hơn.",
+      "animalType": "Loại vật nuôi",
+      "urgency": "Mức độ khẩn cấp",
+      "symptoms": "Triệu chứng hoặc câu hỏi",
+      "symptomsPlaceholder": "Ví dụ: Sốt, kém ăn, ho, tiêu chảy, di chuyển gần đây hoặc ghi chú ảnh...",
+      "photoHint": "Phần đính kèm ảnh sẽ được thêm ở phiên bản tiếp theo.",
+      "submit": "Gửi yêu cầu"
+    },
+    "animals": {
+      "swine": "Heo",
+      "cattle": "Gia súc",
+      "poultry": "Gia cầm",
+      "goat": "Dê"
+    },
+    "priority": {
+      "low": "Thấp",
+      "normal": "Bình thường",
+      "high": "Cao",
+      "emergency": "Khẩn cấp"
+    },
+    "availableTitle": "Trạng thái bác sĩ thú y",
+    "availableSubtitle": "Thẻ demo bổ sung khu vực và thời gian phản hồi cho danh sách bác sĩ hiện có.",
+    "groupedByAvailability": "Nhóm theo trạng thái",
+    "emptyState": {
+      "title": "Chưa có bác sĩ thú y trong danh sách",
+      "description": "Bạn vẫn có thể chuẩn bị yêu cầu tư vấn để sẵn sàng khi danh bạ khả dụng."
+    },
+    "card": {
+      "region": "Khu vực",
+      "response": "Phản hồi"
+    },
+    "demoRegions": {
+      "0": "Hưng Yên",
+      "1": "Lâm Đồng",
+      "2": "Đồng Nai"
+    },
+    "demoResponse": {
+      "online": "15-30 phút",
+      "busy": "Trong hôm nay",
+      "offline": "Đặt lịch"
+    },
+    "queue": {
+      "title": "Hàng chờ tư vấn gần đây",
+      "subtitle": "Ví dụ demo về cách theo dõi câu hỏi từ trang trại.",
+      "items": {
+        "biosecurity": {
+          "title": "Kiểm tra an toàn sinh học ASF",
+          "description": "Nông dân hỏi có cần cách ly chuồng sau tin bệnh gần khu vực hay không."
+        },
+        "vaccination": {
+          "title": "Rà soát lịch tiêm phòng",
+          "description": "Yêu cầu kiểm tra định kỳ trước khi chuyển đàn vật nuôi non."
+        },
+        "symptoms": {
+          "title": "Theo dõi triệu chứng hô hấp",
+          "description": "Ca ho và kém ăn đang chờ ảnh cập nhật."
+        }
+      }
+    },
     "status": {
       "online": "trực tuyến",
       "busy": "bận",
@@ -408,7 +496,37 @@
     "downloadCertificate": "Tải Chứng nhận",
     "keepLearning": "Tiếp tục học!",
     "keepLearningMessage": "Hoàn thành thêm bài kiểm tra và cải thiện điểm nhận thức để mở khóa chứng nhận. Hiện tại bạn đạt {{score}}% - còn {{remaining}}% nữa để được chứng nhận!",
-    "takeMoreQuizzes": "Làm thêm Bài kiểm tra"
+    "takeMoreQuizzes": "Làm thêm Bài kiểm tra",
+    "roadmap": {
+      "eyebrow": "Lộ trình học tập",
+      "title": "Lộ trình học cho nông dân",
+      "subtitle": "Theo dõi lộ trình thực tế từ kiến thức cơ bản về sức khỏe đàn, ứng phó dịch bệnh, vận hành hằng ngày đến sẵn sàng chứng nhận.",
+      "progressLabel": "tiến độ nhận thức",
+      "unlockAt": "Bắt đầu từ {{score}}% nhận thức",
+      "status": {
+        "completed": "Hoàn thành",
+        "current": "Đang học",
+        "locked": "Chưa mở"
+      },
+      "steps": {
+        "basics": {
+          "title": "Cơ bản sức khỏe đàn",
+          "description": "Xây dựng thói quen kiểm tra tình trạng đàn, triệu chứng và ghi chú trang trại hằng ngày."
+        },
+        "disease": {
+          "title": "Nhận thức dịch bệnh",
+          "description": "Nhận biết dấu hiệu cảnh báo, cảnh báo khu vực và thời điểm cần liên hệ hỗ trợ thú y."
+        },
+        "operations": {
+          "title": "Vận hành trang trại",
+          "description": "Kết nối kiến thức với tồn kho, hồ sơ điều trị và báo cáo sản xuất."
+        },
+        "certification": {
+          "title": "Sẵn sàng chứng nhận",
+          "description": "Ôn lại điểm yếu, đạt bài kiểm tra ổn định và chuẩn bị mở khóa chứng nhận."
+        }
+      }
+    }
   },
   "chat": {
     "title": "Trợ lý AI",
@@ -623,7 +741,6 @@
     "return": "Trả hàng",
     "adjustment": "Điều chỉnh",
     "selectItem": "Chọn sản phẩm",
-    "quantity": "Số lượng",
     "notes": "Ghi chú",
     "submit": "Gửi",
     "vnd": "VND",
@@ -664,8 +781,6 @@
     "equipment": "Thiết bị",
     "labor": "Nhân công",
     "other": "Khác",
-    "revenue": "Doanh thu",
-    "costs": "Chi phí",
     "profit": "Lợi nhuận",
     "failedLoadAnalytics": "Không thể tải dữ liệu phân tích"
   },
