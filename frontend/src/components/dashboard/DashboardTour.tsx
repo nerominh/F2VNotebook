@@ -7,6 +7,7 @@ export interface DashboardTourStep {
   description: string;
   targetRef: React.RefObject<HTMLElement | null>;
   page?: string;
+  highlightPadding?: number;
 }
 
 interface DashboardTourProps {
@@ -209,12 +210,13 @@ const DashboardTour: React.FC<DashboardTourProps> = ({
 
   const activeStep = steps[currentStepIndex];
   const isLastStep = currentStepIndex === steps.length - 1;
+  const highlightPadding = activeStep.highlightPadding ?? HIGHLIGHT_PADDING;
   const highlightBounds = targetRect
     ? {
-        top: Math.max(OVERLAY_PADDING, targetRect.top - HIGHLIGHT_PADDING),
-        left: Math.max(OVERLAY_PADDING, targetRect.left - HIGHLIGHT_PADDING),
-        width: targetRect.width + HIGHLIGHT_PADDING * 2,
-        height: targetRect.height + HIGHLIGHT_PADDING * 2,
+        top: Math.max(OVERLAY_PADDING, targetRect.top - highlightPadding),
+        left: Math.max(OVERLAY_PADDING, targetRect.left - highlightPadding),
+        width: targetRect.width + highlightPadding * 2,
+        height: targetRect.height + highlightPadding * 2,
       }
     : null;
 
