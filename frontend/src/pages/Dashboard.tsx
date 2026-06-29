@@ -156,11 +156,11 @@ const Dashboard: React.FC<DashboardProps> = ({
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-          <div ref={sensorsRef}>
+        <div className="grid grid-cols-1 items-stretch gap-4 lg:grid-cols-2">
+          <div ref={sensorsRef} className="flex">
             <SensorCard sensor={sensorData || summary.latest_sensor} sensorStats={sensorStats} />
           </div>
-          <div ref={alertsRef}>
+          <div ref={alertsRef} className="flex">
             <AlertCard level={summary.disease_alert_level} />
           </div>
         </div>
