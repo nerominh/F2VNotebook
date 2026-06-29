@@ -41,14 +41,14 @@ const AlertCard: React.FC<AlertCardProps> = ({ level }) => {
   };
   const cfg = levelConfig[level];
   return (
-    <div className={`card border ${cfg.bg}`}>
+    <div className={`card flex h-full w-full flex-col border ${cfg.bg}`}>
       <div className="flex items-center justify-between mb-3">
         <p className="text-xs text-gray-400 font-medium uppercase tracking-wide">{t('dashboard.regionalDiseaseAlert')}</p>
         <span className="text-2xl">{cfg.icon}</span>
       </div>
       <div className={`text-2xl font-bold ${cfg.color} mb-1`}>{cfg.label}</div>
       <p className="text-xs text-gray-400">{cfg.description}</p>
-      <button className="mt-3 text-xs text-farm-info underline hover:no-underline">
+      <button className="mt-auto pt-3 text-left text-xs text-farm-info underline hover:no-underline">
         {t('dashboard.viewDiseaseRiskMap')}
       </button>
     </div>
