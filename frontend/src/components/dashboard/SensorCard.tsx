@@ -36,7 +36,7 @@ const SensorCard: React.FC<SensorCardProps> = ({ sensor, sensorStats }) => {
   const statusClass = statusColors[normalizedStatus];
 
   return (
-    <div className="card">
+    <div className="card h-full w-full">
       <div className="flex items-center justify-between mb-4">
         <div>
           <p className="text-xs text-gray-400 font-medium uppercase tracking-wide">{t('dashboard.iotFarmSensors')}</p>
