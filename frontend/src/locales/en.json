@@ -92,7 +92,7 @@
     "normal25to50": "Normal (25-50)",
     "elevated50to75": "Elevated (50-75)",
     "critical75to100": "Critical (75-100)",
-    "loadingData": "Loading data...",
+    "loadingData": "Loading data from system...",
     "backendEmpty": "Backend is empty. Displaying mock data.",
     "loadedDataPoints": "Successfully loaded {count} data points.",
     "generatingDemoData": "Generating demo data on backend...",
@@ -227,6 +227,22 @@
         "reportsRecommendations": {
           "title": "Recommendations tab",
           "description": "Switch to Recommendations when you want AI-generated guidance based on the current farm financial report."
+        },
+        "vetConnectNavigation": {
+          "title": "Open Veterinary Connect",
+          "description": "Use Veterinary Connect when reports, alerts, or notebook findings need expert review from a veterinarian."
+        },
+        "vetConnectRequest": {
+          "title": "Start a consult request",
+          "description": "Choose the animal type, urgency, and symptoms so the request has enough context for quick triage."
+        },
+        "vetConnectAvailability": {
+          "title": "Review vet availability",
+          "description": "Check which veterinarians are available, their status, region, and expected response time before following up."
+        },
+        "vetConnectQueue": {
+          "title": "Track recent consults",
+          "description": "Use this queue area to understand how farm questions can be followed from request to veterinary response."
         }
       }
     },
@@ -238,14 +254,13 @@
     "status": "Status",
     "normal": "Normal",
     "warning": "Warning",
-    "critical": "Critical",
+    "critical": "CRITICAL",
     "avg": "avg",
     "noData": "No data",
     "regionalDiseaseAlert": "Regional Disease Alert",
     "low": "LOW",
     "medium": "MEDIUM",
     "high": "HIGH",
-    "critical": "CRITICAL",
     "lowDescription": "No significant disease activity in your region.",
     "mediumDescription": "HFMD and respiratory infections reported in nearby districts.",
     "highDescription": "Multiple disease outbreaks confirmed. Restrict livestock movement.",
@@ -287,7 +302,6 @@
     "daNang": "Da Nang",
     "myLocation": "My Location",
     "loading": "Loading...",
-    "loadingData": "Loading data from system...",
     "loadingMapData": "Loading map data...",
     "geolocationUnsupported": "Geolocation is not supported by your browser.",
     "geolocationFailed": "Unable to retrieve your location.",
@@ -335,13 +349,87 @@
   },
   "vetConnect": {
     "title": "Veterinary Connect",
-    "subtitle": "Available veterinarians and consultation requests.",
+    "eyebrow": "Expert support",
+    "subtitle": "Request help, review veterinarian availability, and keep urgent herd questions moving.",
     "panelTitle": "Veterinary Connect",
     "loadError": "Unable to load veterinarians right now.",
     "noVets": "No veterinarians are available.",
     "sending": "Sending...",
     "requestConsult": "Request Consult",
     "consultRequested": "Consult Requested",
+    "responseTimeValue": "Under 2 hours",
+    "responseTimeLabel": "average reply",
+    "requestSubject": "{{animal}} consultation request",
+    "defaultRequestDescription": "Requesting a veterinary consultation from Veterinary Connect.",
+    "metrics": {
+      "available": "Available now",
+      "today": "Responds today",
+      "urgent": "Urgent queue",
+      "region": "Nearest region",
+      "regionValue": "Hung Yen"
+    },
+    "requestComposer": {
+      "eyebrow": "New consult",
+      "title": "Ask a veterinarian",
+      "subtitle": "Share the animal type, urgency, and field observations so a vet can triage faster.",
+      "animalType": "Animal type",
+      "urgency": "Urgency",
+      "symptoms": "Symptoms or question",
+      "symptomsPlaceholder": "Example: Fever, low appetite, coughing, diarrhea, recent movement, or photo notes...",
+      "photoHint": "Photo attachment placeholder for the next version.",
+      "submit": "Send request"
+    },
+    "animals": {
+      "swine": "Swine",
+      "cattle": "Cattle",
+      "poultry": "Poultry",
+      "goat": "Goat"
+    },
+    "priority": {
+      "low": "Low",
+      "normal": "Normal",
+      "high": "High",
+      "emergency": "Emergency"
+    },
+    "availableTitle": "Veterinarian availability",
+    "availableSubtitle": "Demo cards add region and response context around the existing veterinarian list.",
+    "groupedByAvailability": "Grouped by availability",
+    "emptyState": {
+      "title": "No veterinarians are listed yet",
+      "description": "You can still prepare a consult request so it is ready when the directory is available."
+    },
+    "card": {
+      "region": "Region",
+      "response": "Response"
+    },
+    "demoRegions": {
+      "0": "Hung Yen",
+      "1": "Lam Dong",
+      "2": "Dong Nai"
+    },
+    "demoResponse": {
+      "online": "15-30 min",
+      "busy": "Today",
+      "offline": "Schedule"
+    },
+    "queue": {
+      "title": "Recent consult queue",
+      "subtitle": "Demo examples of how farm questions could be tracked.",
+      "items": {
+        "biosecurity": {
+          "title": "ASF biosecurity check",
+          "description": "Farmer asked whether to isolate a pen after nearby outbreak news."
+        },
+        "vaccination": {
+          "title": "Vaccination schedule review",
+          "description": "Routine review requested before moving young livestock."
+        },
+        "symptoms": {
+          "title": "Respiratory symptoms follow-up",
+          "description": "Coughing and low appetite case waiting for updated photos."
+        }
+      }
+    },
     "status": {
       "online": "online",
       "busy": "busy",
@@ -408,7 +496,37 @@
     "downloadCertificate": "Download Certificate",
     "keepLearning": "Keep Learning!",
     "keepLearningMessage": "Complete more quizzes and improve your awareness score to unlock your certificate. Currently at {{score}}% - you're {{remaining}}% away from certification!",
-    "takeMoreQuizzes": "Take More Quizzes"
+    "takeMoreQuizzes": "Take More Quizzes",
+    "roadmap": {
+      "eyebrow": "Learning roadmap",
+      "title": "Farmer learning path",
+      "subtitle": "Follow a practical route from herd health basics to disease response, daily operations, and certification readiness.",
+      "progressLabel": "awareness progress",
+      "unlockAt": "Starts at {{score}}% awareness",
+      "status": {
+        "completed": "Completed",
+        "current": "Current",
+        "locked": "Locked"
+      },
+      "steps": {
+        "basics": {
+          "title": "Herd health basics",
+          "description": "Build the habit of checking daily herd condition, symptoms, and farm notes."
+        },
+        "disease": {
+          "title": "Disease awareness",
+          "description": "Recognize warning signs, regional alerts, and when to contact veterinary support."
+        },
+        "operations": {
+          "title": "Farm operations",
+          "description": "Connect learning with inventory, treatment records, and production reports."
+        },
+        "certification": {
+          "title": "Certification readiness",
+          "description": "Review weak areas, pass quizzes consistently, and prepare for certificate unlock."
+        }
+      }
+    }
   },
   "chat": {
     "title": "AI Assistant",
@@ -623,7 +741,6 @@
     "return": "Return",
     "adjustment": "Adjustment",
     "selectItem": "Select an item",
-    "quantity": "Quantity",
     "notes": "Notes",
     "submit": "Submit",
     "vnd": "VND",
@@ -664,8 +781,6 @@
     "equipment": "Equipment",
     "labor": "Labor",
     "other": "Other",
-    "revenue": "Revenue",
-    "costs": "Costs",
     "profit": "Profit",
     "failedLoadAnalytics": "Failed to load analytics data"
   },
