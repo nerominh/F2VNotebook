@@ -55,10 +55,48 @@ const ProfilePage: React.FC = () => {
   };
 
   const isCertified = awarenessScore?.overall_score === 100;
+  const roadmapSteps = [
+    { key: 'basics', threshold: 0 },
+    { key: 'disease', threshold: 35 },
+    { key: 'operations', threshold: 65 },
+    { key: 'certification', threshold: 90 },
+  ] as const;
+
+  const getRoadmapState = (threshold: number, index: number) => {
+    const score = awarenessScore?.overall_score ?? 0;
+    const nextThreshold = roadmapSteps[index + 1]?.threshold ?? 101;
+
+    if (score >= nextThreshold || score === 100) return 'completed';
+    if (score >= threshold) return 'current';
+    return 'locked';
+  };
+
+  const getRoadmapClasses = (state: string) => {
+    switch (state) {
+      case 'completed':
+        return {
+          card: 'border-emerald-400/40 bg-emerald-500/10',
+          marker: 'bg-emerald-500 text-white',
+          label: 'text-emerald-300',
+        };
+      case 'current':
+        return {
+          card: 'border-sky-400/50 bg-sky-500/10',
+          marker: 'bg-sky-500 text-white',
+          label: 'text-sky-300',
+        };
+      default:
+        return {
+          card: 'border-farm-border bg-farm-panel/70',
+          marker: 'bg-farm-muted text-farm-subtle',
+          label: 'text-farm-subtle',
+        };
+    }
+  };
 
   return (
     <div className="flex-1 overflow-auto">
-      <div className="max-w-4xl mx-auto p-6 space-y-6">
+      <div className="max-w-6xl mx-auto p-6 space-y-6">
         {/* Header */}
         <div className="flex items-center justify-between">
           <div>
@@ -127,6 +165,58 @@ const ProfilePage: React.FC = () => {
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+
+            {/* Learning Roadmap */}
+            <div className="bg-farm-card border border-farm-border rounded-lg p-6">
+              <div className="mb-6 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary-300">
+                    {t('profile.roadmap.eyebrow')}
+                  </p>
+                  <h2 className="mt-2 text-2xl font-bold text-white">{t('profile.roadmap.title')}</h2>
+                  <p className="mt-2 max-w-2xl text-sm text-farm-subtle">
+                    {t('profile.roadmap.subtitle')}
+                  </p>
+                </div>
+                <div className="rounded-lg border border-primary-400/30 bg-primary-500/10 px-4 py-3 text-sm text-primary-200">
+                  <span className="font-semibold">{awarenessScore.overall_score}%</span>
+                  <span className="ml-2 text-farm-subtle">{t('profile.roadmap.progressLabel')}</span>
+                </div>
+              </div>
+
+              <div className="grid gap-4 lg:grid-cols-4">
+                {roadmapSteps.map((step, index) => {
+                  const state = getRoadmapState(step.threshold, index);
+                  const classes = getRoadmapClasses(state);
+
+                  return (
+                    <div
+                      key={step.key}
+                      className={`rounded-lg border p-4 transition-colors ${classes.card}`}
+                    >
+                      <div className="mb-4 flex items-center justify-between gap-3">
+                        <div className={`flex h-9 w-9 items-center justify-center rounded-full text-sm font-bold ${classes.marker}`}>
+                          {index + 1}
+                        </div>
+                        <span className={`text-xs font-semibold uppercase ${classes.label}`}>
+                          {t(`profile.roadmap.status.${state}`)}
+                        </span>
+                      </div>
+
+                      <h3 className="text-base font-semibold text-white">
+                        {t(`profile.roadmap.steps.${step.key}.title`)}
+                      </h3>
+                      <p className="mt-2 text-sm text-farm-subtle">
+                        {t(`profile.roadmap.steps.${step.key}.description`)}
+                      </p>
+                      <div className="mt-4 rounded-md bg-black/10 px-3 py-2 text-xs text-farm-muted dark:bg-white/5">
+                        {t('profile.roadmap.unlockAt', { score: step.threshold })}
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
 
