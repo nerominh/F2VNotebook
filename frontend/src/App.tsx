@@ -30,6 +30,7 @@ const GUIDED_PAGE_TOUR_START_STEPS: Record<string, string> = {
   'public-dashboard': 'forum-composer',
   inventory: 'inventory-overview',
   reports: 'reports-overview',
+  'vet-connect': 'vet-connect-request',
 };
 
 const readAppTourStatus = (): AppTourStatus => {
@@ -58,6 +59,7 @@ function AppContent() {
   const forumNavRef = useRef<HTMLButtonElement | null>(null);
   const inventoryNavRef = useRef<HTMLButtonElement | null>(null);
   const reportsNavRef = useRef<HTMLButtonElement | null>(null);
+  const vetConnectNavRef = useRef<HTMLButtonElement | null>(null);
   const dashboardOverviewRef = useRef<HTMLDivElement | null>(null);
   const dashboardQuickActionsRef = useRef<HTMLDivElement | null>(null);
   const dashboardSensorsRef = useRef<HTMLDivElement | null>(null);
@@ -82,6 +84,9 @@ function AppContent() {
   const reportsSummaryRef = useRef<HTMLDivElement | null>(null);
   const reportsChartsRef = useRef<HTMLDivElement | null>(null);
   const reportsRecommendationsRef = useRef<HTMLDivElement | null>(null);
+  const vetConnectRequestRef = useRef<HTMLFormElement | null>(null);
+  const vetConnectAvailabilityRef = useRef<HTMLElement | null>(null);
+  const vetConnectQueueRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     if (tourStatus === 'unseen' && activePage === 'dashboard') {
@@ -152,6 +157,7 @@ function AppContent() {
       title: t('dashboard.tour.steps.navigation.title'),
       description: t('dashboard.tour.steps.navigation.description'),
       targetRef: sidebarNavigationRef,
+      highlightPadding: 0,
     },
     {
       id: 'overview',
@@ -250,6 +256,34 @@ function AppContent() {
       title: t('dashboard.tour.steps.notebookHistory.title'),
       description: t('dashboard.tour.steps.notebookHistory.description'),
       targetRef: notebookHistoryRef,
+    },
+    {
+      id: 'vet-connect-navigation',
+      page: 'notebook',
+      title: t('dashboard.tour.steps.vetConnectNavigation.title'),
+      description: t('dashboard.tour.steps.vetConnectNavigation.description'),
+      targetRef: vetConnectNavRef,
+    },
+    {
+      id: 'vet-connect-request',
+      page: 'vet-connect',
+      title: t('dashboard.tour.steps.vetConnectRequest.title'),
+      description: t('dashboard.tour.steps.vetConnectRequest.description'),
+      targetRef: vetConnectRequestRef,
+    },
+    {
+      id: 'vet-connect-availability',
+      page: 'vet-connect',
+      title: t('dashboard.tour.steps.vetConnectAvailability.title'),
+      description: t('dashboard.tour.steps.vetConnectAvailability.description'),
+      targetRef: vetConnectAvailabilityRef,
+    },
+    {
+      id: 'vet-connect-queue',
+      page: 'vet-connect',
+      title: t('dashboard.tour.steps.vetConnectQueue.title'),
+      description: t('dashboard.tour.steps.vetConnectQueue.description'),
+      targetRef: vetConnectQueueRef,
     },
     {
       id: 'forum-navigation',
@@ -371,7 +405,13 @@ function AppContent() {
           />
         );
       case 'vet-connect':
-        return <VetConnectPage />;
+        return (
+          <VetConnectPage
+            requestRef={vetConnectRequestRef}
+            availabilityRef={vetConnectAvailabilityRef}
+            queueRef={vetConnectQueueRef}
+          />
+        );
       case 'quizzes':
         return <QuizPage />;
       case 'public-dashboard':
@@ -432,6 +472,7 @@ function AppContent() {
           'public-dashboard': forumNavRef,
           inventory: inventoryNavRef,
           reports: reportsNavRef,
+          'vet-connect': vetConnectNavRef,
         }}
         showTourButton={Boolean(currentPageTourStartStep)}
         tourLabel={t('dashboard.tour.replay')}
